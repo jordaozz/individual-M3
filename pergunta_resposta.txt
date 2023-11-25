@@ -1,0 +1,71 @@
+1) Quais são as entidades necessárias?
+2) Quais são os principais campos e seus respectivos tipos?
+3) Como essas entidades estão relacionadas?
+4) Simule 2 registros para cada entidade.
+
+----------------------------------------------------------------------
+
+1) Entidades Necessárias:
+
+- Empresa
+- Tecnologias
+- Colaborador
+- Tecnologias_Empresa
+
+2) Principais Campos e Tipos de Dados:
+
+- Empresa:
+id_empresa (Chave Primária, Inteiro, AUTO_INCREMENT)
+nome_empresa (Texto, NOT NULL)
+endereco (Texto, NOT NULL)
+telefone (Texto, NOT NULL)
+
+- Tecnologias:
+id_tecnologias (Chave Primária, Inteiro, AUTO_INCREMENT)
+area (Texto, NOT NULL)
+nome_tecnologia (Texto, NOT NULL)
+
+- Colaborador:
+id_colaborador (Chave Primária, Inteiro, AUTO_INCREMENT)
+nome (Texto, NOT NULL)
+cargo (Texto, NOT NULL)
+id_empresa (Chave Estrangeira referenciando Empresa)
+
+- Tecnologias_Empresa:
+id_empresa (Chave Estrangeira referenciando Empresa)
+id_tecnologias (Chave Estrangeira referenciando Tecnologias)
+nivel_utilizacao (Inteiro, NOT NULL)
+
+3) Relacionamentos:
+
+- Empresa e Colaborador:
+Relacionamento 1:N (Um para Muitos) entre Empresa e Colaborador.
+Uma empresa pode ter muitos colaboradores, mas um colaborador pertence a uma única empresa.
+
+- Empresa e Tecnologias_Empresa:
+Relacionamento 1:N (Um para Muitos) entre Empresa e Tecnologias_Empresa.
+Uma empresa pode ter várias entradas em Tecnologias_Empresa.
+
+- Tecnologias e Tecnologias_Empresa:
+Relacionamento 1:N (Um para Muitos) entre Tecnologias e Tecnologias_Empresa.
+Uma tecnologia pode estar associada a várias entradas em Tecnologias_Empresa.
+
+4) Simulação de 2 Registros para Cada Entidade:
+
+- Empresa:
+id_empresa: 1, nome_empresa: 'Gabriel', endereco: 'Rua Maneira 144', telefone: '(21) 93333-3333'
+id_empresa: 2, nome_empresa: 'Jordão', endereco: 'Rua Meio Ruim 155', telefone: '(21) 94444-4444'
+
+- Tecnologias:
+id_tecnologias: 1, area: 'Análise de Dados', nome_tecnologia: 'MySQL'
+id_tecnologias: 2, area: 'Programação', nome_tecnologia: 'Python'
+
+- Colaborador:
+id_colaborador: 1, nome: 'Luan Santana', cargo: 'Gerente Geral', id_empresa: 1
+id_colaborador: 2, nome: 'Ariana Grande', cargo: 'Analista de Dados', id_empresa: 2
+
+- Tecnologias_Empresa:
+id_empresa: 1, id_tecnologias: 1, nivel_utilizacao: 4
+id_empresa: 1, id_tecnologias: 2, nivel_utilizacao: 3
+id_empresa: 2, id_tecnologias: 1, nivel_utilizacao: 5
+id_empresa: 2, id_tecnologias: 2, nivel_utilizacao: 2
