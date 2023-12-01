@@ -32,6 +32,7 @@ cargo (Texto, NOT NULL)
 id_empresa (Chave Estrangeira referenciando Empresa)
 
 - Tecnologias_Empresa:
+id_emp_tec (Chave Primária, Inteiro, AUTO_INCREMENT)
 id_empresa (Chave Estrangeira referenciando Empresa)
 id_tecnologias (Chave Estrangeira referenciando Tecnologias)
 nivel_utilizacao (Inteiro, NOT NULL)
@@ -65,7 +66,7 @@ id_colaborador: 1, nome: 'Luan Santana', cargo: 'Gerente Geral', id_empresa: 1
 id_colaborador: 2, nome: 'Ariana Grande', cargo: 'Analista de Dados', id_empresa: 2
 
 - Tecnologias_Empresa:
-id_empresa: 1, id_tecnologias: 1, nivel_utilizacao: 4
-id_empresa: 1, id_tecnologias: 2, nivel_utilizacao: 3
-id_empresa: 2, id_tecnologias: 1, nivel_utilizacao: 5
-id_empresa: 2, id_tecnologias: 2, nivel_utilizacao: 2
+id_emp_tec: 1, id_empresa: 1, id_tecnologias: 1, nivel_utilizacao: 4
+id_emp_tec: 2, id_empresa: 1, id_tecnologias: 2, nivel_utilizacao: 3
+id_emp_tec: 3, id_empresa: 2, id_tecnologias: 1, nivel_utilizacao: 5
+id_emp_tec: 4, id_empresa: 2, id_tecnologias: 2, nivel_utilizacao: 2
