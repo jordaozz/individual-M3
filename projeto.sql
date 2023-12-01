@@ -2,26 +2,27 @@ CREATE DATABASE resiliadata;
 USE resiliadata;
 
 CREATE TABLE empresa( 
-id_empresa INT PRIMARY KEY AUTO_INCREMENT,  
+id_empresa INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
 nome_empresa VARCHAR(70) NOT NULL,  
 endereco VARCHAR(70) NOT NULL,  
 telefone VARCHAR(70) NOT NULL
 ); 
 
 CREATE TABLE tecnologias( 
-id_tecnologias INT PRIMARY KEY AUTO_INCREMENT,  
+id_tecnologias INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
 area VARCHAR(70) NOT NULL,  
 nome_tecnologia VARCHAR(70) NOT NULL
 ); 
 
 CREATE TABLE colaborador( 
-id_colaborador INT PRIMARY KEY AUTO_INCREMENT,  
+id_colaborador INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
 nome VARCHAR(70) NOT NULL,  
 cargo VARCHAR(70) NOT NULL,  
 id_empresa INT NOT NULL 
 ); 
 
 CREATE TABLE tecnologias_empresa( 
+id_emp_tec INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 id_empresa INT NOT NULL,  
 id_tecnologias INT NOT NULL,  
 nivel_utilizacao INT NOT NULL  
@@ -46,9 +47,9 @@ VALUES
 ('Luan Santana', 'Gerente Geral', 1),
 ('Ariana Grande', 'Analista de Dados', 2);
 
-INSERT INTO tecnologias_empresa(id_empresa, id_tecnologias, nivel_utilizacao) 
+INSERT INTO tecnologias_empresa(id_emp_tec, id_empresa, id_tecnologias, nivel_utilizacao) 
 VALUES 
-(1, 1, 4),
-(1, 2, 3),
-(2, 1, 5),
-(2, 2, 2);
+(1, 1, 1, 4),
+(2, 1, 2, 3),
+(3, 2, 1, 5),
+(4, 2, 2, 2);
